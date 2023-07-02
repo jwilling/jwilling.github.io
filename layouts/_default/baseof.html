@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en-US" }}">
+    {{- partial "head.html" . -}}
+    <body data-theme="{{ .Site.Params.mode | default "dark"}}" class="notransition">
+
+      <script>
+        const body = document.body;
+        const data = body.getAttribute("data-theme");
+
+        const initTheme = (state) => {
+          if (state === "dark") {
+            body.setAttribute("data-theme", "dark");
+          } else if (state === "light") {
+            body.removeAttribute("data-theme");
+          } else {
+            localStorage.setItem("theme", data);
+          }
+        };
+
+        initTheme(localStorage.getItem("theme"));
+
+        setTimeout(() => body.classList.remove("notransition"), 75);
+      </script>
+
+      {{ template "_internal/google_analytics.html" . }}
+
+      {{- partial "navbar.html" . -}}
+      {{- block "main" . }}{{ end -}}
+      {{- partial "footer.html" . -}}
+    </body>
+</html>

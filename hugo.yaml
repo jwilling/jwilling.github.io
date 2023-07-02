@@ -1,0 +1,35 @@
+baseURL: https://jwilling.com
+title: Dev with Jonathan
+author: Jonathan Willing
+languageCode: en
+
+googleAnalytics: "G-C5KQF0R58B"
+
+theme:
+  - github.com/h4r1337/hugo-klise
+
+menu:
+  main:
+    - identifier: home
+      name: home
+      url: /
+      weight: 1
+    - identifier: about
+      name: about
+      url: /about
+      weight: 2
+    - identifier: blog
+      name: blog
+      url: /blog
+      weight: 3
+
+params:
+  author:
+    name: Jonathan Willing
+    bio: Random thoughts about Apple development
+    avatar: images/avatar.jpg
+    twitter: willing
+    github: jwilling
+
+  section:
+    paginate: 20
